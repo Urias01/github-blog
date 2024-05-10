@@ -82,7 +82,7 @@ export function Blog() {
     <>
     {user && (<BlogProfile user={user} />)}
 
-      <div className="flex flex-col gap-4 w-[884px] self-center">
+      <div className="flex flex-col gap-4 w-[800px] sm:w-[410px] md:w-[580px] lg:w-[768px] self-center">
         <div className="flex justify-between">
           <h2 className="text-baseSubtitle text-xl font-bold">Publicações</h2>
           <p className="text-baseSpan">{issues.total_count} publicações</p>
@@ -100,13 +100,13 @@ export function Blog() {
         </form>
       </div>
 
-       <section className="grid grid-cols-2 w-[884px] self-center mt-8 gap-8 mb-8">
+       <section className="grid w-full pl-12 pr-12 self-center mt-8 gap-8 md:gap-4 mb-8">
         {Array.isArray(issues.items) && (
           issues.items.map((issue) => (
             <Link 
               key={issue.number}
               to={`/post/${issue.number}`}
-              className="h-[260px] w-[416px] p-8 bg-basePost rounded-xl 
+              className="h-[260px] w-[416px]  md:w-[350px] p-8 bg-basePost rounded-xl 
               flex flex-col gap-8"
             >
               <div className="flex justify-between gap-2">

@@ -14,22 +14,22 @@ export function BlogProfile({ user }: BlogProfileProps) {
 
   return (
     <section 
-        className="w-[884px] h-[212px] bg-baseProfile relative p-8 
-          rounded-lg self-center -top-24 shadow-2xl"
+        className="sm:w-[420px] md:w-[540px] lg:w-[620px] w-[884px] h-[212px] md:h-[180px] bg-baseProfile relative p-8 
+          rounded-lg self-center -top-12 shadow-2xl"
       >
-        <div className="flex gap-8">
+        <div className="flex gap-8 ">
           <img 
             src={user && user.avatar_url} 
             alt="Profile image" 
-            className="w-[148px] h-[148px] rounded-lg"
+            className="w-[148px] h-[148px] rounded-lg md:w-[100px] md:h-[100px]"
           />
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:gap-2">
             <div className="flex justify-between">
-              <h1 className="text-3xl font-bold text-baseTitle">{user.name}</h1>
+              <h1 className="text-3xl md:text-xl font-bold text-baseTitle">{user.name}</h1>
               <Link 
                 to={user.html_url}
                 target="_blank"
-                className="flex text-brandBlue font-semibold gap-2 relative -right-44"
+                className="flex text-brandBlue font-semibold gap-2 relative"
               >
                 GITHUB <img src={arrowUpRight} className="h-4 fill-brandBlue"/>
               </Link>
@@ -40,7 +40,7 @@ export function BlogProfile({ user }: BlogProfileProps) {
                 <img src={githubLogo} className="h-6" /> 
                 {user.login}
               </span>
-              <span className="flex gap-2">
+              <span className="flex gap-2 md:hidden">
                 <img src={buildingLogo} className="h-6" />
                 {user.company}
               </span>
